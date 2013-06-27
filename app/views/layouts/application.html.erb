@@ -6,13 +6,16 @@
     <head>
 
     	<%= stylesheet_link_tag    "application", :media => "all" %>
-		<%= javascript_include_tag "application" %>
 		<%= csrf_meta_tags %>
     
         <%= render 'layouts/head' %>
         
     </head>
     <body>
+
+        <% flash.each do |name, msg| %>
+        <% content_tag(:div, msg, class: "alert") %>
+        <% end %>
     
         <%= render 'layouts/publicmenu' %>
         
@@ -27,6 +30,8 @@
         <%= render 'layouts/footerpage' %>
         
         <%= render 'layouts/footer' %>
+
+        <%= javascript_include_tag "application" %>
 
     </body>
 </html>
