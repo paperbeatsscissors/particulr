@@ -1,16 +1,32 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Particulr</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
 
-<%= render 'layouts/head' %>
+    	<%= stylesheet_link_tag    "application", :media => "all" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %>
+    
+        <%= render 'layouts/head' %>
+        
+    </head>
+    <body>
+    
+        <%= render 'layouts/publicmenu' %>
+        
+        <h1 class="pagetitle wrapper">Browsing: Popular</h1>
+        
+        <div class="layoutload">
+        <i class="ss-icon ss-gizmo">share</i>
+        </div>
+        
+        <%= yield %>
+        
+        <%= render 'layouts/footerpage' %>
+        
+        <%= render 'layouts/footer' %>
 
-<%= yield %>
-
-</body>
+    </body>
 </html>
